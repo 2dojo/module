@@ -1,0 +1,31 @@
+{
+    "name": "2dojo/module",
+    "type": "library",
+    "keywords": ["laravel", "module"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andriskaaz",
+            "email": "koncz91@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwoDojo\\Module\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TwoDojo\\Test\\Module\\": "tests"
+        }
+    },
+    "suggest": {
+        "2dojo/module_manager": "Required to use the module"
+    }
+}
