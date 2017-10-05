@@ -4,6 +4,7 @@ namespace TwoDojo\Test\Module;
 
 use TwoDojo\Test\Module\Stubs\ModuleStub;
 use TwoDojo\Test\Module\Stubs\DisabledModuleStub;
+use TwoDojo\Test\Module\Stubs\ModuleWithoutUniqueNameStub;
 
 class AbstractModuleTest extends \PHPUnit\Framework\TestCase
 {
@@ -117,6 +118,16 @@ class AbstractModuleTest extends \PHPUnit\Framework\TestCase
         $module = new ModuleStub();
 
         $this->assertEquals('2dojo/module_stub', $module->getUniqueName());
+    }
+
+    /**
+     * @covers \TwoDojo\Module\AbstractModule::getUniqueName()
+     */
+    public function testGetUniqueNameReturnsClassNameIfUniqueNameNotSet()
+    {
+        $module = new ModuleWithoutUniqueNameStub();
+
+        $this->assertEquals(ModuleWithoutUniqueNameStub::class, $module->getUniqueName());
     }
 
     /**

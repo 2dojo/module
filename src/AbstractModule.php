@@ -162,6 +162,10 @@ abstract class AbstractModule implements EventListener
      */
     public function getUniqueName()
     {
+        if (empty($this->uniqueName)) {
+            $this->uniqueName = get_class($this);
+        }
+
         return $this->uniqueName;
     }
 
